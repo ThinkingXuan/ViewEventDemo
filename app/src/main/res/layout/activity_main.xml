@@ -6,10 +6,14 @@
     android:layout_height="match_parent"
     tools:context="com.you.vieweventdemo.MainActivity">
 
-  <com.you.vieweventdemo.MyButton
-      android:id="@+id/myButton"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:text="点击"/>
+  <!--<com.you.vieweventdemo.MyButton-->
+      <!--android:id="@+id/myButton"-->
+      <!--android:layout_width="wrap_content"-->
+      <!--android:layout_height="wrap_content"-->
+      <!--android:text="点击"/>-->
+
+    <com.you.vieweventdemo.LineView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
 </LinearLayout>

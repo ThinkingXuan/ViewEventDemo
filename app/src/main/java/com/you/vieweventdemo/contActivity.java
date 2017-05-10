@@ -1,26 +1,18 @@
 package com.you.vieweventdemo;
 
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.MenuItem;
-import android.view.MotionEvent;
-import android.view.View;
-import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity {
-
-    public static final String TAG = "MyButton";
-    private MyButton mButton;
-    private Button bt;
+public class contActivity extends AppCompatActivity {
 
     private Toolbar toolbar;
     private RecyclerView rvToDoList;
-
-
+    private adapter mAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,7 +20,13 @@ public class MainActivity extends AppCompatActivity {
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         rvToDoList = (RecyclerView) findViewById(R.id.rvToDoList);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext());
+        rvToDoList.setLayoutManager(linearLayoutManager);
+        mAdapter = new adapter(this);
+        rvToDoList.setAdapter(mAdapter);
+
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
     @Override

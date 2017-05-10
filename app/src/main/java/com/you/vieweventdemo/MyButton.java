@@ -5,6 +5,7 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.widget.Button;
+import android.widget.Scroller;
 
 /**
  * Created by youxuan on 2017/4/24 0024.
@@ -41,6 +42,7 @@ public class MyButton extends Button {
                 Log.d(TAG, "onTouchEvent: Action_up");
                 break;
         }
+
         return super.onTouchEvent(event);
     }
 
@@ -58,8 +60,16 @@ public class MyButton extends Button {
                 break;
             case MotionEvent.ACTION_UP:
                 Log.d(TAG, "dispatchTouchEvent: Action_up");
+
                 break;
         }
         return super.dispatchTouchEvent(event);
+    }
+
+
+    @Override
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+
     }
 }
